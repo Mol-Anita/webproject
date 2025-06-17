@@ -27,7 +27,7 @@ A regisztrált felhasználók az összes látogatói funkción felül az alábbi
 
 ### 3.1. Fejlett Képkezelési Rendszer
 Az alkalmazás egyik legfontosabb egyedi fejlesztése a fejlett képkezelési rendszer:
-- Aszinkron képfeltöltés valós idejű progress bar megjelenítéssel
+- Aszinkron képfeltöltés
 - Automatikus képfeldolgozás és optimalizálás
 - Dinamikus képgaléria lightbox funkcióval
 - Drag-and-drop képfeltöltési lehetőség
@@ -51,7 +51,7 @@ Kiemelt figyelmet fordítottam a biztonsági szempontokra:
 
 ### 3.4. Adatbázis és Backend Architektúra
 Modern, jól strukturált adatbázis és szerveroldali megoldások:
-- SQLite adatbázis 4 kapcsolódó táblával
+- MySQL adatbázis 4 kapcsolódó táblával
 - RESTful API endpoints
 - Hatékony query optimalizálás
 - Moduláris kódszerkezet
@@ -60,7 +60,7 @@ Modern, jól strukturált adatbázis és szerveroldali megoldások:
 ## Egyéni megvalósítások
 
 ### 1. Fejlett képkezelő rendszer
-- Aszinkron képfeltöltés progress bar-ral
+- Aszinkron képfeltöltés 
 - Képek dinamikus betöltése és megjelenítése
 - Beépített képgaléria lightbox funkcionalitással
 - Képek törlésének lehetősége ajax kérésekkel

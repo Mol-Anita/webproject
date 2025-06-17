@@ -38,23 +38,21 @@ export async function handleImageUpload(req, res) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
 
-        const articleId = req.params.articleId;
+        const articleId = parseInt(req.params.articleId, 10);
+        if (isNaN(articleId)) {
+            return res.status(400).json({ error: 'Invalid article ID' });
+        }
         const imageId = await Image.createImage(req.file, articleId);
 
-        // Ha AJAX kérés, JSON választ küldünk
-        if (req.xhr || req.headers.accept.indexOf('json') > -1) {
-            res.json({
-                success: true,
-                imageId: imageId,
-                filename: req.file.filename
-            });
-        } else {
-            // Egyébként visszairányítjuk a cikk oldalára
-            res.redirect(`/blog/${articleId}`);
-        }
+        res.json({
+            success: true,
+            imageId: imageId,
+            filename: req.file.filename,
+            articleId: articleId // Include articleId in the response for client-side redirection
+        });
     } catch (error) {
         console.error('Error uploading image:', error);
-        res.status(500).send('Server error');
+        res.status(500).json({ error: 'Server error' }); // Always send JSON error response
     }
 }
 

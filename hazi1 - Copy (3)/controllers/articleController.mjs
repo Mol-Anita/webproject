@@ -32,8 +32,17 @@ export async function getAllArticles(req, res) {
 }
 
 export async function getArticle(req, res) {    try {
-        const article = await Article.getArticleById(req.params.id);
-        const comments = await Comment.getCommentsByArticleId(req.params.id);
+        const articleId = parseInt(req.params.id, 10);
+        if (isNaN(articleId)) {
+            return res.status(400).send('Invalid article ID');
+        }
+
+        const article = await Article.getArticleById(articleId);
+        if (!article) {
+            return res.status(404).send('Article not found');
+        }
+
+        const comments = await Comment.getCommentsByArticleId(articleId);
         res.render('blog', { 
             article, 
             comments,

@@ -1,15 +1,15 @@
 import db from '../config/database.mjs';
 
 export async function createComment(articleId, userId, content) {
-    const result = await db.run(
+    const [result] = await db.execute(
         'INSERT INTO comments (article_id, user_id, content) VALUES (?, ?, ?)',
         [articleId, userId, content]
     );
-    return result.lastID;
+    return result.insertId;
 }
 
 export async function getCommentsByArticleId(articleId) {
-    return await db.all(
+    const [rows] = await db.execute(
         `SELECT comments.*, users.username 
          FROM comments 
          JOIN users ON comments.user_id = users.id 
@@ -17,4 +17,5 @@ export async function getCommentsByArticleId(articleId) {
          ORDER BY created_at DESC`,
         [articleId]
     );
+    return rows;
 }

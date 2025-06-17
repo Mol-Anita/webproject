@@ -18,7 +18,7 @@ async function migrateArticles() {
 
         // Create a default user for existing articles if not exists
         try {
-            await db.run(
+            await db.execute(
                 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
                 ['admin', 'admin@example.com', hashedPassword]
             );
@@ -26,26 +26,25 @@ async function migrateArticles() {
             // User might already exist, continue
         }
         
-        const user = await db.get('SELECT id FROM users WHERE email = ?', ['admin@example.com']);
-        const userId = user.id;
+        const [userRows] = await db.execute('SELECT id FROM users WHERE email = ?', ['admin@example.com']);
+        const userId = userRows[0].id;
 
         // Insert each article
         for (const article of articles) {
             const content = Array.isArray(article.content) ? article.content.join('\n\n') : article.content;
             
-            await db.run(
+            const [articleResult] = await db.execute(
                 'INSERT INTO articles (title, content, user_id, created_at) VALUES (?, ?, ?, ?)',
                 [article.title, content, userId, new Date(article.date)]
             );
 
             // Get the article id
-            const result = await db.get('SELECT last_insert_rowid() as id');
-            const articleId = result.id;
+            const articleId = articleResult.insertId;
 
             // If article has an image, add it to images table
             if (article.image) {
                 const imagePath = article.image.split('/').pop(); // Get filename from path
-                await db.run(
+                await db.execute(
                     'INSERT INTO images (filename, originalname, mimetype, size, article_id) VALUES (?, ?, ?, ?, ?)',
                     [imagePath, imagePath, 'image/jpeg', 0, articleId]
                 );

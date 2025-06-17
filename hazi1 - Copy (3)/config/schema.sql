@@ -27,3 +27,14 @@ CREATE TABLE IF NOT EXISTS comments (
     FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+CREATE TABLE IF NOT EXISTS images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    filename VARCHAR(255) NOT NULL,
+    originalname VARCHAR(255) NOT NULL,
+    mimetype VARCHAR(255) NOT NULL,
+    size INT NOT NULL,
+    article_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE
+);

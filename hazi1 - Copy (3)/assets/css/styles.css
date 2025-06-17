@@ -71,9 +71,6 @@ footer {
 
 /* Container layout */
 .container {
-    display: grid;
-    grid-template-columns: 1fr 250px;
-    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -740,4 +737,24 @@ button[type="submit"]:hover {
         max-width: 100%;
         margin: 0 0 15px 0;
     }
+}
+
+/* Image Gallery */
+.image-gallery .image-container {
+    /* To ensure uniform size for images */
+    width: 200px; /* Standard width */
+    height: 200px; /* Standard height */
+    overflow: hidden; /* Hide excess if image is larger */
+    margin: 0 10px 15px 0; /* Add right and bottom margin for gap */
+    display: flex; /* Use flexbox to center image within container */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd; /* Optional: add a border for better visual separation */
+    border-radius: 4px;
+}
+
+.image-gallery .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop excess parts of the image */
 }
