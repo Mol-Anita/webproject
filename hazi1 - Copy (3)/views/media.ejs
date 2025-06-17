@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <main>
+        <h2>Képgaléria</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/images/IMG_1236.JPG" alt="Málta tengerpart" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/IMG_1245(1).JPG" alt="Blue Lagoon" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/IMG_1255(1).JPG" alt="Golden Bay" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/IMG_1287.JPG" alt="St. Peter's Pool" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/IMG_1321(1).JPG" alt="Comino sziget" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/IMG_1328.JPG" alt="Gozo sziget" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/IMG_1370.JPG" alt="Valletta kikötő" loading="lazy">
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+            <div class="modal-nav">
+                <button id="prevBtn">&lt;</button>
+                <button id="nextBtn">&gt;</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<%- include('partials/footer') %>
+
+<script src="/js/script.js"></script>

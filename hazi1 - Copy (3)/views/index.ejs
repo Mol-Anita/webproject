@@ -1,0 +1,74 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <main>
+        <% articles.forEach(article => { %>
+            <article id="<%= article.id %>" class="blog-post">
+                <h2><a href="/<%= article.id %>"><%= article.title %></a></h2>
+                <time datetime="<%= article.date %>"><%= new Date(article.date).toLocaleDateString('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' }) %></time>
+                
+                <% if (article.image) { %>
+                    <img src="<%= article.image %>" alt="<%= article.title %>" class="float-right">
+                <% } %>
+                
+                <div class="content collapsed">
+                    <p><%= article.content[0] %></p>
+                    <div class="expanded-content" style="display: none;">
+                        <% for(let i = 1; i < article.content.length; i++) { %>
+                            <p><%= article.content[i] %></p>
+                        <% } %>
+
+                        <% if (article.table) { %>
+                            <table id="strandokTable">
+                                <thead>
+                                    <tr>
+                                        <th>Strand</th>
+                                        <th>Jelleg</th>
+                                        <th>Legjobb időszak</th>
+                                        <th>Belépő díj (€)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% article.table.forEach(row => { %>
+                                        <tr>
+                                            <td><%= row.name %></td>
+                                            <td><%= row.type %></td>
+                                            <td><%= row.bestTime %></td>
+                                            <td><%= row.price %></td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="post-actions">
+                    <button class="read-more-btn" onclick="toggleContent(this)">Tovább olvasom</button>
+                    <button class="fav-btn" onclick="toggleFavorite(this)">❤️ Kedvencekhez adás</button>
+                </div>
+
+                <div class="comments-section">
+                    <h3>Hozzászólások</h3>
+                    <div class="comments-list" id="comments-<%= article.id %>"></div>
+                    <div class="comment-form">
+                        <textarea class="comment-input" placeholder="Írj hozzászólást..." rows="3"></textarea>
+                        <div class="comment-form-actions">
+                            <input type="text" class="comment-author" placeholder="Név (opcionális)">
+                            <button class="add-comment-btn" onclick="addComment(this, '<%= article.id %>')">Küldés</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        <% }); %>
+    </main>
+    
+    <aside class="favorites-sidebar">
+        <h3>Kedvenc Bejegyzések</h3>
+        <div id="favorites-list">
+            <p>Még nincsenek kedvenc bejegyzések.</p>
+        </div>
+    </aside>
+</div>
+
+<%- include('partials/footer') %>

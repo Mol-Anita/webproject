@@ -1,0 +1,82 @@
+[
+  {
+    "id": "malta-strandok",
+    "title": "Málta Legszebb Strandjai",
+    "date": "2025-03-20",
+    "image": "/images/IMG_1236.JPG",
+    "content": [
+      "Málta kristálytiszta vizű strandjai és sziklás öblei igazi paradicsomot jelentenek a napimádók számára...",
+      "Málta partjai nemcsak szépségükről híresek, hanem kulturális és történelmi érdekességeket is rejtenek...",
+      "A Blue Lagoon kék vizeit a világ egyik legtisztább természetes medencéjének tartják, és több film forgatási helyszíne is volt.",
+      "A Golden Bay nemcsak a fürdőzők, hanem a helyi szörfösök és naplemente-rajongók kedvelt helye.",
+      "St. Peter's Pool egy sziklás öböl, amelyet a helyiek előszeretettel használnak természetes ugródeszkaként. Ha bátrak vagyunk, kipróbálhatjuk a híres sziklaugrást!"
+    ],
+    "table": [
+      {
+        "name": "Blue Lagoon",
+        "type": "Kristálykék víz",
+        "bestTime": "Június-Szeptember",
+        "price": 15
+      },
+      {
+        "name": "Golden Bay",
+        "type": "Homokos",
+        "bestTime": "Május-Október",
+        "price": 0
+      },
+      {
+        "name": "St. Peter's Pool",
+        "type": "Sziklás öböl",
+        "bestTime": "Április-November",
+        "price": 0
+      }
+    ],
+    "summary": [
+      "Kristálytiszta vizű öblök",
+      "Természetes sziklamedencék",
+      "Festői naplementék"
+    ]
+  },
+  {
+    "id": "valletta",
+    "title": "Valletta: A Lovagok Városa",
+    "date": "2025-03-19",
+    "content": [
+      "Valletta, Málta fővárosa, a Johannita Lovagrend öröksége...",
+      "Vallettát a 16. században alapították a lovagok, és azóta is Európa egyik legjobban megőrzött történelmi városa...",
+      "A város utcáin sétálva érezhetjük a történelem leheletét: a Nagymester Palotája, a Szent János-társkatedrális és az ősi erődök lenyűgöző látványt nyújtanak.",
+      "Valletta nemcsak múzeumokban gazdag, hanem a helyi piacok és éttermek is kiváló gasztronómiai élményeket nyújtanak."
+    ]
+  },
+  {
+    "id": "malta-gasztro",
+    "title": "Málta Gasztronómiai Kincsei",
+    "date": "2025-03-18",
+    "content": [
+      "A máltai konyha egyesíti a mediterrán ízeket és a helyi hagyományokat...",
+      "A pastizzi, a helyi sajttal vagy borsóval töltött péksütemény, Málta egyik legismertebb finomsága...",
+      "Ne hagyjuk ki a friss halételeket sem, különösen a lampuki halat, amely a máltai halászok egyik büszkesége.",
+      "A helyi borászatok világszínvonalú borokat készítenek, érdemes ellátogatni egy borkóstolóra."
+    ]
+  },
+  {
+    "id": "gozo",
+    "title": "Gozo Szigetének Titkai",
+    "date": "2025-03-17",
+    "content": [
+      "Gozo, Málta testvérszigete, nyugodtabb tempójával és érintetlen természeti szépségével...",
+      "Gozo tele van legendákkal, mint például a Calypso-barlang, amely Homérosz Odüsszeiájához kötődik...",
+      "A Ġgantija templomok az egyik legrégebbi szabadon álló építmények a világon – még Stonehenge-nél is idősebbek!"
+    ]
+  },
+  {
+    "id": "malta-tortenelem",
+    "title": "Málta Történelmi Emlékei",
+    "date": "2025-03-16",
+    "content": [
+      "A megalitikus templomok, középkori városok és II. világháborús emlékek...",
+      "Málta stratégiai helyzete miatt az ősidők óta fontos szerepet játszott a történelemben...",
+      "Mdina, az egykori főváros, csendes és rejtélyes utcáival minden látogatót elvarázsol."
+    ]
+  }
+]
